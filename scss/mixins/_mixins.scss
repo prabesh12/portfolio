@@ -1,0 +1,13 @@
+@mixin setFont($font-weight, $size, $line-height, $font-style) {
+  // font-family: $monserrat;
+  font-weight: $font-weight;
+  font-size: $size;
+  line-height: $line-height;
+  font-style: $font-style;
+}
+@mixin flexProperty($direction, $justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}

@@ -1,0 +1,245 @@
+@import "../variables/colors";
+@import "../variables/fonts";
+@import "../mixins/mixins";
+
+body{
+    background: #D7D2D2;
+}
+header {
+  background-color: $black-50;
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 650px;
+  z-index: 1;
+
+  nav{
+    position: relative;
+    z-index: 3;
+      ul{
+        width: 100%-20%;
+        @include flexProperty(row, space-between, center);
+         margin-top: 40px;
+         list-style: none;
+        
+        >li{
+
+            a{ 
+                @include setFont(500, 1rem, 1.1rem, normal);
+                text-decoration: none;
+                color: $primary-color;
+                text-transform: uppercase;
+                font-family: $Montserrat;
+               
+
+                &:hover{
+                     color: $primary-color;
+                }
+                
+            }
+        }
+        
+      }
+  }
+
+  .banner{
+    position: absolute;
+    bottom: 0;
+    @include flexProperty(row, space-between, center);
+    width: 100%;
+    background: radial-gradient(50% 50% at 50% 50%, #589FEB 0%, #054E9C 100%);
+&-image-wrapper{
+    width: 100%;
+    height: 650px;
+    z-index: 2;
+ 
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        
+    }
+    
+  }
+  &-content-wrapper{
+    @include flexProperty(flex, center, center);
+    height: 100%;
+
+    h4{
+        @include setFont(700, 2rem, 2.5rem, $Montserrat);
+        color: $primary-color;
+        text-decoration: underline;
+        letter-spacing: 1px;
+    }
+  }
+
+}
+}
+
+
+main{
+    
+     @include flexProperty(column, space-between, center);
+     .intro{
+        margin-top: 60px;
+        position: relative;
+        &::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: -50px;
+            right: 0;
+        border-bottom: 1px solid  rgb(216, 216, 216);
+
+        }
+        &-image-wrapper{
+            margin-bottom: 20px;
+           @include flexProperty(row, space-evenly, flex-start);
+            width:100%;
+           img{
+            width: 100%;
+            height: 100%;
+            max-width: 400px;
+            object-fit: cover;
+           }
+        
+        }
+        &-description{
+            @include flexProperty(column, space-between, center);
+            h2{
+                @include setFont(700, 2.3rem, 2.3rem, normal);
+                letter-spacing: 1px;
+                margin-bottom: 40px;
+                font-family: $Montserrat;
+
+
+            }
+            p{
+                @include setFont(500, 1.18rem, 1.5rem, normal);
+                color: $black-30;
+                font-family: $Montserrat;
+                 margin-bottom: 40px;
+                 letter-spacing: 1px;
+
+
+            }
+            q{
+                @include setFont(500, 1rem, 1.5rem, italic);
+                color: $black-40;
+                font-family: $Montserrat;
+                letter-spacing: 1px;
+                margin-bottom:40px;
+
+
+                
+            }
+            button{
+                @include setFont(500, 1.1rem, 1.5rem, normal);
+                background-color: $blue-50;
+                border: none;
+                outline: none;
+                text-transform: uppercase;
+                color: $primary-color;
+                border-radius: 6px;
+                padding: 12px 18px;
+                font-family: $Montserrat;
+
+
+            }
+
+        }
+
+
+     }
+     .meetings{
+          margin-top: 100px;
+          position: relative;
+
+          &::after{
+              content: "";
+              position: absolute;
+              width: 100%;
+              left: 0;
+              bottom: -60px;
+              right: 0;
+          border-bottom: 1px solid  rgb(216, 216, 216);
+  
+          }
+          &-title-wrapper{
+            @include flexProperty(column, space-between, center);
+            h2{
+                font-family: $Montserrat;
+                @include setFont(600, 1.5rem, 1.5rem, normal);
+            }
+            p{
+                margin-bottom: 0;
+                color: #525151;
+                font-family: $Montserrat;
+                @include setFont(400, 1.2rem, 1.4rem, normal);
+                
+            }
+          }
+          &-card-wrapper{
+            @include flexProperty(column, center, center);
+            position:relative;
+            margin-top: 30px;
+           cursor: pointer;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            p{
+                position: absolute;
+                text-align: center;
+                font-family: $Montserrat;
+                color: $primary-color;
+                bottom: 20px;
+                @include setFont(500, 1.5rem, 1.6rem, normal);
+                margin-bottom: 0px;
+            }
+            
+          }
+     }
+
+     .recent-post{
+        @include flexProperty(column, space-between, center);
+        width: 100%;     
+        margin-top: 100px;
+        &-title{
+            margin-bottom: 40px;
+            h2{
+                font-family: $Montserrat;
+                @include setFont(600, 2rem, 1.5rem, normal);
+            }
+           
+        }
+            &-card{
+                margin-bottom: 50px;
+                width: 100%;
+                cursor: pointer;
+                @include flexProperty(row, space-between, flex-start);
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                .content-wrapper{
+                    margin-left: 20px;
+                    @include flexProperty(column, space-between, flex-start);
+                    h2{
+                        @include setFont(600, 1.1rem, 1rem, normal);
+                        margin-bottom: 1rem;
+                    }
+                    p{
+                        @include setFont(400, 0.9rem, 1.5rem, normal);
+                        margin-bottom: 0px;
+
+                    }
+                }
+            }
+     }
+}
